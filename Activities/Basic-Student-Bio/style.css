@@ -1,0 +1,45 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: beige;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    font-size: 25px;
+}
+
+p{
+    text-align: center;
+}
+
+.bio {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    color: azure;
+    text-align: center;
+}
+
+#about,
+#contact-info,
+#bio-pic{
+    float: left;
+
+}
+
+#about {
+    width: 70%;
+    
+}
+
+#contact-info {
+    width: 30%;
+}
+
+#bio-pic {
+    width: 200px;
+    height: 200px;
+    align-content: center;
+}

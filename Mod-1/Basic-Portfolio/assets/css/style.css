@@ -43,6 +43,9 @@ font-family: 'Georgia', Times, Times New Roman, serif;
     float: right;
     padding: 14px;
     margin: auto;
+    text-align: center;
+    float: right;
+    word-spacing: 15px;
 }
 
 .profile-pic {
@@ -99,4 +102,50 @@ font-family: 'Georgia', Times, Times New Roman, serif;
     padding: 20px;
     border-top: 15px solid #4aaaa5;
 
+}
+
+.flex-container {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    
+
+    }
+
+    .gaming {
+        margin: 10px;
+        box-sizing: border-box;
+        background-image: url(../images/gaming.jpg);
+        height: 200px;
+        width: 350px;
+        padding-top: 120px;
+    }
+
+    .hangman {
+        margin: 10px;
+        box-sizing: border-box;
+        background-image: url(../images/keyboard.webp);
+        height: 200px;
+        width: 350px;
+        padding-top: 120px;
+    }
+
+    .website {
+        margin: 10px;
+        box-sizing: border-box;
+        background-image: url(../images/website.jpg);
+        height: 200px;
+        width: 350px;
+        padding-top: 120px;
+    }
+
+.port-text {
+    text-align: center;
+    color: #ebebeb;
+    background: #4aaaa5;
+    box-sizing: border-box;
+    height: 50px;
+    padding: 1px;
+  
+    
 }

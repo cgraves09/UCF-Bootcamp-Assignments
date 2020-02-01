@@ -1,0 +1,40 @@
+body {
+margin: auto;
+width: 960px;
+}
+
+.position-fixed,
+ .relative-position,
+ .absolute-position {
+    text-align: center;
+    font-size: 30px;
+}
+
+.position-fixed {
+    background: gray;
+    position: fixed;
+    height: 100px;
+    width: 200px;
+    top: 0;
+    left: 350px;
+    
+
+}
+
+.relative-position {
+    position: relative;
+    width: 960px;
+    height: 200px;
+    background: grey;
+}
+
+.absolute-position {
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    background: lightgrey;
+    z-index: 2;
+    bottom: 0;
+    left: 760px;
+    
+}

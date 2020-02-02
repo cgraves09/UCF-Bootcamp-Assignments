@@ -4,6 +4,7 @@ body{
     font-size: 18px;
     padding: 0;
     margin: 0;
+    
 }
 
 h1{
@@ -16,30 +17,58 @@ p{
 
 .bio {
     background-color: black;
-    margin: 0;
-    padding: 0;
     color: azure;
     text-align: center;
+    height: 50px;
+    padding-top: 0px;
+    margin: auto;
+    line-height: 150%;
 }
 
+.title {
+    padding: 10px;
+    margin: 0;
+}
+
+
+.container {
+   padding: 5px;
+   overflow: auto;
+}
+
+.clearfix {
+    clear: both;
+    
+}
 #about,
 #contact-info,
-#bio-pic{
+#image{
     float: left;
+    text-align: center;
 
 }
 
 #about {
-    width: 70%;
+    width: 33.3%;
     
 }
 
 #contact-info {
-    width: 30%;
+    width: 33.3%;
+    
 }
 
-#bio-pic {
-    width: 200px;
-    height: 200px;
-    align-content: center;
+#image {
+    width: 33.3%;
+    
+}
+
+
+#Name,
+#About,
+#Contact {
+    float: left;
+    width: 33.3%;
+    text-align: center;
+    
 }

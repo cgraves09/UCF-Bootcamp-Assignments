@@ -1,0 +1,108 @@
+body {
+    background-image: url(images/natural.png);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+
+
+#logo {
+    color: white;
+    background-color: darkcyan;
+    font-size: 30px;
+    padding: 20px;
+    
+    
+    
+}
+
+#nav-bar {
+    padding: 0;
+}
+
+.container {
+    padding: 0;
+    
+}
+
+
+
+#about {
+    background: #ffffff;
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 300px;
+}
+
+#about-me {
+    color: darkcyan;
+    padding: 10px;
+}
+
+#navBar {
+    padding-left: 550px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.line-break {
+    height: 1px;
+    color: grey;
+    width: 95%;
+}
+
+.intro {
+    font-size: 20px;
+    line-height: 2.5;
+    padding: 15px;
+   
+    
+}
+
+#profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    float: left;
+    padding: 10px;
+    
+}
+
+
+
+.overlay {
+    position: relative;
+    text-align: center;
+    background: darkcyan;
+    width: 100%;
+    z-index: 2;
+    top: -90px;
+    color: #ffffff;
+    font: 15px;
+    
+    
+    
+}
+
+#port-img {
+    width: 550px;
+    height: 200px;
+}
+
+#btn-form {
+    background: #4aaaa5;
+    padding: 10px;
+}
+
+#footer {
+    
+    background: #777777;
+    border-top: 15px solid #4aaaa5;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+   
+}
+
+

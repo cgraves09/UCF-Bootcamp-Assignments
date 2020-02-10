@@ -1,0 +1,18 @@
+h1 {
+    font-size: 50px;
+}
+a {
+    font-size: 90px;
+}
+
+a:hover {
+    background: green;
+}
+
+a:focus {
+    background: orange;
+}
+
+a:active {
+    background: blue;
+}

@@ -41,15 +41,16 @@ body {
 }
 
 #navBar {
-    padding-left: 550px;
+    padding-left: 535px;
     font-size: 25px;
     text-align: center;
 }
 
 .line-break {
-    height: 1px;
-    color: grey;
+    height: 2px;
+    background-color: grey;
     width: 95%;
+    opacity: 30%;
 }
 
 .intro {
@@ -99,10 +100,11 @@ body {
     
     background: #777777;
     border-top: 15px solid #4aaaa5;
-    height: 50px;
+    height: 80px;
     text-align: center;
     font-size: 20px;
     color: #ffffff;
+    padding: 20px;
    
 }
 

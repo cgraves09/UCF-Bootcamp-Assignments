@@ -5,13 +5,17 @@ body {
     color: #777777;
     
 }
+.container {
+    width: 960px;
+    margin: auto;
+}
 /* wrapping header section */
 
 .wrapper {
     width: 960px;
-    margin: auto;
+   margin-left: -20px;
     border-bottom: #777777 3px;
-    margin-left: 38px;
+   
 }
 /* styling for anchors*/
 
@@ -31,7 +35,7 @@ body {
 .header {
 overflow: hidden;
 background-color: #ffffff;
-margin: auto;
+margin: 0;
 font-family: 'Georgia', Times, Times New Roman, serif;
 }
 
@@ -172,8 +176,19 @@ font-family: 'Georgia', Times, Times New Roman, serif;
 
 @media screen and (max-width: 980px) {
 
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
     .header {
         width: 100%;
+    }
+
+    .wrapper {
+        margin-left: 40px;
     }
 
     .about {
@@ -214,6 +229,15 @@ font-family: 'Georgia', Times, Times New Roman, serif;
 }
 
 @media screen and (max-width: 768px) {
+
+    
+
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
 
     .header {
         width: 100%;
@@ -285,13 +309,19 @@ font-family: 'Georgia', Times, Times New Roman, serif;
 }
 
 @media screen and (max-width: 640px) {
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
     .header {
         float: none;
     }
 
     .wrapper {
       width: auto;
-      margin-left: 0px;
+      margin-left: 0;
         
         
         }
@@ -392,9 +422,3 @@ font-family: 'Georgia', Times, Times New Roman, serif;
     }
     
 }
-   
-    
-
-   
-   
-    

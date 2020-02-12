@@ -93,6 +93,10 @@ font-family: 'Georgia', Times, Times New Roman, serif;
 .about-me {
     color: #4aaaa5;
     padding-top: 30px;
+    animation-name: colorChange;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 .line-break {
@@ -421,4 +425,16 @@ font-family: 'Georgia', Times, Times New Roman, serif;
         border: #b8b8b8 solid 1px;
     }
     
+}
+
+@keyframes colorChange {
+
+    from {color: #4aaaa5;}
+  to {
+      background-color: black;
+      margin-left: 400px;
+}
+
+  
+  
 }

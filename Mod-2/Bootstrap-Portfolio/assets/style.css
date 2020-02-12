@@ -7,13 +7,11 @@ body {
 
 
 #logo {
-    color: white;
-    background-color: darkcyan;
+    color: #ffffff;
+    background-color: #4aaaa5;
     font-size: 30px;
     padding: 20px;
-    
-    
-    
+   
 }
 
 #nav-bar {
@@ -33,23 +31,28 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     margin-bottom: 300px;
+    
 }
 
 #about-me {
-    color: darkcyan;
+    color: #4aaaa5;
     padding: 10px;
+    animation-name: colorChange;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #navBar {
-    padding-left: 535px;
-    font-size: 25px;
+    padding-left: 585px;
+    font-size: 20px;
     text-align: center;
 }
 
 .line-break {
     height: 2px;
     background-color: grey;
-    width: 95%;
+    width: 98%;
     opacity: 30%;
 }
 
@@ -75,7 +78,7 @@ body {
 .overlay {
     position: relative;
     text-align: center;
-    background: darkcyan;
+    background: #4aaaa5;
     width: 100%;
     z-index: 2;
     top: -90px;
@@ -102,10 +105,22 @@ body {
     border-top: 15px solid #4aaaa5;
     height: 80px;
     text-align: center;
-    font-size: 20px;
+    font-size: 5px;
     color: #ffffff;
     padding: 20px;
    
+}
+
+@keyframes colorChange {
+
+    from {color: #4aaaa5;}
+  to {
+      background-color: black;
+      margin-left: 400px;
+}
+
+  
+  
 }
 
 

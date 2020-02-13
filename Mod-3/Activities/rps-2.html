@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 2
+  </title>
+</head>
+
+<body>
+
+  <div id="game">
+      <h1 id="Directions"> Press R,P,S to start playing!</h1>
+      <p id="userChoice"></p>
+      <p id="computer-guess"></p>
+      <p id="wins"></p>
+      <p id="loss"></p>
+      <p id="ties"></p>
+
+
+  </div>
+
+  <script type="text/javascript">
+  // Pulling elements from html doc
+    var userChoice = document.getElementById("userChoice");
+    var computer = document.getElementById("computer-guess");
+    var winText = document.getElementById("wins");
+    var lossText = document.getElementById("loss");
+    var tieText = document.getElementById("ties");
+    var directions = document.getElementById("Directions");
+    var wins = 0;
+    var loss = 0;
+    var tie = 0;
+
+
+
+    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+    var computerChoices = ["r", "p", "s"];
+
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function(event) {
+         // Randomly chooses a choice from the options array. This is the Computer's guess.
+      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+      // Determines which key was pressed.
+      var userGuess = event.key;
+      if ((userGuess === "r") ||(userGuess === "s") ||(userGuess === "p")) {
+
+        if ((userGuess === "r" && computerGuess === "s")|| 
+        (userGuess === "p" && computerGuess === "r") || 
+         (userGuess === "s" && computerGuess === "p")) {
+          wins++;
+        } 
+        else if ((userGuess === computerGuess)){
+          tie++;
+        }
+        else {
+          loss++;
+        }
+        directions.textContent = "";
+         userChoice.textContent = "User Chose " + userGuess;
+         computer.textContent = "Computer Chose " + computerGuess;
+         winText.textContent = "Wins " + wins;
+         lossText.textContent = "Loss " + loss;
+         tieText.textContent = "Ties " + tie;
+
+      }
+
+     
+
+   
+
+      
+
+     
+
+    };
+  </script>
+
+</body>
+
+</html>

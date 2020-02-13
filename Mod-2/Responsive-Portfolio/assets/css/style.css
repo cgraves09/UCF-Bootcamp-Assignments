@@ -113,6 +113,7 @@ font-family: 'Georgia', Times, Times New Roman, serif;
 .footer {
     position: fixed;
     left: 0;
+    
     bottom: 0;
     text-align: center;
     width: 100%;
@@ -120,7 +121,7 @@ font-family: 'Georgia', Times, Times New Roman, serif;
     color: #ffffff;
     margin: auto;
     background-color: #777777;
-    height: auto;
+    height: 50px;
     padding: 20px;
     border-top: 15px solid #4aaaa5;
 
@@ -213,7 +214,7 @@ font-family: 'Georgia', Times, Times New Roman, serif;
     .footer {
         clear: both;
         position: relative;
-        margin-top: 650px;
+        margin-top: 50px;
         
     }
 /* css contact.html */
@@ -262,7 +263,7 @@ font-family: 'Georgia', Times, Times New Roman, serif;
 
     .footer {
         position: relative;
-        margin-top: 30px;
+        top: 30px;
         
     }
 
@@ -382,7 +383,7 @@ font-family: 'Georgia', Times, Times New Roman, serif;
 
     .footer {
         position: relative;
-        margin-top: 30px;
+        top: 30px;
     }
    
     /* Portfolio Css */

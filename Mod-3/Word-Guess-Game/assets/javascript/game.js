@@ -101,10 +101,7 @@ function imgPic () {
     
 };
 
-function defaultImg () {
-    let image = document.getElementById('img-pic')
-    Image.src = 'assets/images/sports-background.jpg';
-}
+
 
 // function to display loser image
 function loserImg () {

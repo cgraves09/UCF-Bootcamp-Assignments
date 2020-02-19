@@ -22,8 +22,11 @@ let numGuess = 13;
 function start()  { 
     // reset game values
     numGuess = 13;
-   
+    blankWord = [];
+    wrongGuess = [];
 
+   
+    
 
     // choose a random word
     chosenWord = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -36,9 +39,7 @@ function start()  {
     //testing indexing of random word
     console.log(letterCount);
     
-    blankWord = [];
-
-    wrongGuess = [];
+    
 
     
 
@@ -111,13 +112,7 @@ function imgPic () {
     
 }
 
-function loserImg () {
-    let loserImg = document.getElementById('img-pic');
-    
-        loserImg.src = 'assets/images/loser.jpg';   
-     
-    
-}
+
 
 // // Function to run after a guess has been made
 function afterGuess () {
@@ -135,6 +130,7 @@ function afterGuess () {
         
         document.getElementById('description-text').innerHTML = ('You Win! ' + 'Word is ' + chosenWord);
         document.getElementById('wins-text').innerHTML = wins;
+        // pushes correct image to chosen word
         imgPic();
         //restart the game
         start();
@@ -149,6 +145,8 @@ function afterGuess () {
         start();
     }
 }
+
+
 
 //Start the game
 

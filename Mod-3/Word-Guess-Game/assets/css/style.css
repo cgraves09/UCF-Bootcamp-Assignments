@@ -26,7 +26,9 @@ body {
 
 #description-text {
     font-size: 30px;
-    color: aqua;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bolder;
 }
 
 .container {
@@ -41,7 +43,7 @@ body {
 }
 p {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 25px;
     
 }
 
@@ -55,5 +57,17 @@ p {
     color: aqua;
     font-weight: bolder;
     
+    
+}
+
+#img-pic {
+    width: 300px;
+    height: 300px;
+    outline: none;
+}
+
+#line-break {
+    border: 1px solid aqua;
+    width: 90%;
 }
 

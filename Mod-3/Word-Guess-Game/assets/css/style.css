@@ -1,5 +1,7 @@
 body {
  background-image: url(../images/sports-background.jpg); 
+ background-repeat: no-repeat;
+ background-size: cover;
  color: #ffffff;
  font-size: 15px;
 }

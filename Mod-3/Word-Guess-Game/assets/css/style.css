@@ -72,3 +72,17 @@ p {
     width: 90%;
 }
 
+
+#current-word {
+    color: aqua;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+#loss-text,
+#wins-text,
+#guesses-remaining-text,
+#letters-guessed-text {
+    color: #ffffff;
+}
+

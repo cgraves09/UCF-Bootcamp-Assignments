@@ -25,9 +25,6 @@ function start()  {
     blankWord = [];
     wrongGuess = [];
 
-   
-    
-
     // choose a random word
     chosenWord = wordBank[Math.floor(Math.random() * wordBank.length)];
 
@@ -38,11 +35,6 @@ function start()  {
     letterCount = lettersInChosenWord.length;
     //testing indexing of random word
     console.log(letterCount);
-    
-    
-
-    
-
     
     // creating blank spaces for the letterCount
     for(i = 0; i < letterCount; i++){
@@ -75,10 +67,10 @@ function checkLetters(letters) {
         }
          console.log(blankWord);
     }
-     else {
-            wrongGuess.push(letters);
-            numGuess--;
-        }
+    else {
+        wrongGuess.push(letters);
+        numGuess--;
+    }
 };
 // Function for image matching wordChoice
 function imgPic () {
@@ -110,14 +102,12 @@ function imgPic () {
         image.src = 'assets/images/loser.jpg';
     }
     
-}
+};
 
 
 
 // // Function to run after a guess has been made
 function afterGuess () {
-
-    console.log('Wins' + wins, 'Loss' + loss, 'Guess Left' + numGuess);
 
     // Dom manipulation to html file update id tags
     document.getElementById('current-word-text').innerHTML = blankWord.join('');
@@ -147,7 +137,6 @@ function afterGuess () {
 }
 
 
-
 //Start the game
 
 start();
@@ -159,4 +148,4 @@ document.onkeyup = function(event) {
     checkLetters(userGuess);
     // Run Function after each guess
     afterGuess();
-}
+};

@@ -101,9 +101,26 @@ function imgPic () {
     
 };
 
+function defaultImg () {
+    let image = document.getElementById('img-pic')
+    Image.src = 'assets/images/sports-background.jpg';
+}
+
+// function to display loser image
 function loserImg () {
     let image = document.getElementById('img-pic');
     image.src = 'assets/images/loser.jpg';
+};
+// function for audio win and loss
+function audioWin () {
+    let audio = document.getElementById('myAudio');
+
+    audio.play();
+};
+
+function audioLose () {
+    let audioLoser = document.getElementById('myAudioLoss');
+    audioLoser.play();
 };
 
 
@@ -123,8 +140,10 @@ function afterGuess () {
         document.getElementById('wins-text').innerHTML = wins;
         // pushes correct image to chosen word
         imgPic();
+        audioWin();
         //restart the game
         start();
+        
         
     }
     // if number of guesses have ran out
@@ -133,8 +152,10 @@ function afterGuess () {
         document.getElementById('description-text').innerHTML = ('Haha you lose!');
         document.getElementById('loss-text').innerHTML = loss;
         loserImg();
+        audioLose();
         start();
     }
+    
 }
 
 

@@ -11,12 +11,21 @@
     
 </head>
 <body>
-    <div class="container">
-        <h1 id="title">Hangman</h1> 
-        <h1 id="edition">Sports Edition</h1>
-    </div>
-   
+ 
+    <audio id="myAudio">
+        <source src="assets/Audio/winner.mp3" type="audio/mpeg">
+        
+    </audio>
+    <audio id="myAudioLoss">
+        <source src="assets/Audio/loser.mp3" type="audio/mpeg">
+        
+    </audio>
+
     <div class ="jumbotron">
+        <div class="container">
+            <h1 id="title">Hangman</h1> 
+            <h1 id="edition">Sports Edition</h1>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <p id="description-text">Guess a letter to get started <br> No Spaces</p>
@@ -25,11 +34,10 @@
         </div>
         <div class="row ">
             <div id="col1" class="col-md-4 align-self-center">
-                <img id="img-pic">
+                <img id="img-pic" src="assets/images/sports-background.jpg">
             </div>
             <div id="col2" class="col-md-4 align-self-center">
                 <h3 id="current-word">Current Word</h3> 
-                
                 <p id="current-word-text"></p>  
             </div>  
              

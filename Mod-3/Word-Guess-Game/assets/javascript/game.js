@@ -98,12 +98,13 @@ function imgPic () {
      else if (chosenWord === 'tennis') {
         image.src = 'assets/images/tennis.png'; 
     }
-    else {
-        image.src = 'assets/images/loser.jpg';
-    }
     
 };
 
+function loserImg () {
+    let image = document.getElementById('img-pic');
+    image.src = 'assets/images/loser.jpg';
+};
 
 
 // // Function to run after a guess has been made

@@ -1,7 +1,7 @@
 // Global variables
 
 // Creating array of word bank
-const wordBank = ['golf', 'baseball','tennis','rugby','soccer', 'basketball', 'football',];
+const wordBank = ['golf', 'baseball','tennis','volleyball','soccer', 'basketball', 'football',];
 
 // variables for game
 let chosenWord = '';
@@ -9,7 +9,7 @@ let lettersInChosenWord = [];
 let blankWord = []; 
 let letterCount = 0;
 let wrongGuess = [];
-
+let descriptionText = '';
 //Game counters
 let wins = 0;
 let loss = 0;
@@ -39,6 +39,10 @@ function start()  {
     blankWord = [];
 
     wrongGuess = [];
+
+    
+
+    
     // creating blank spaces for the letterCount
     for(i = 0; i < letterCount; i++){
         blankWord.push(' _ ');
@@ -75,6 +79,45 @@ function checkLetters(letters) {
             numGuess--;
         }
 };
+// Function for image matching wordChoice
+function imgPic () {
+    let image = document.getElementById('img-pic');
+
+    if (chosenWord === 'football'){
+       image.src = 'assets/images/football.jpg';    
+    } 
+     else if (chosenWord === 'soccer') {
+        image.src = 'assets/images/soccer.png'; 
+    }
+
+    else if (chosenWord === 'golf'){
+        image.src = 'assets/images/golf.png';    
+     } 
+     else if (chosenWord === 'basketball') {
+         image.src = 'assets/images/basketball.png'; 
+     }
+     else if (chosenWord === 'volleyball'){
+        image.src = 'assets/images/volleyball.png';    
+     } 
+     else if (chosenWord === 'baseball') {
+         image.src = 'assets/images/baseball.png'; 
+     }
+     else if (chosenWord === 'tennis') {
+        image.src = 'assets/images/tennis.png'; 
+    }
+    else {
+        image.src = 'assets/images/loser.jpg';
+    }
+    
+}
+
+function loserImg () {
+    let loserImg = document.getElementById('img-pic');
+    
+        loserImg.src = 'assets/images/loser.jpg';   
+     
+    
+}
 
 // // Function to run after a guess has been made
 function afterGuess () {
@@ -89,17 +132,20 @@ function afterGuess () {
     // If all the correct letters have been guessed
     if (lettersInChosenWord.toString() === blankWord.toString()) {
         wins++;
-        alert('You Win! ' + 'Word is ' + chosenWord);
-        document.getElementById('wins-text').innerHTML = wins;
         
+        document.getElementById('description-text').innerHTML = ('You Win! ' + 'Word is ' + chosenWord);
+        document.getElementById('wins-text').innerHTML = wins;
+        imgPic();
         //restart the game
         start();
+        
     }
     // if number of guesses have ran out
     else if (numGuess === 0) {
         loss++;
-        alert('You lose');
+        document.getElementById('description-text').innerHTML = ('Haha you lose!');
         document.getElementById('loss-text').innerHTML = loss;
+        loserImg();
         start();
     }
 }

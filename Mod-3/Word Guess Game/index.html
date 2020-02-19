@@ -15,14 +15,24 @@
         <h1 id="title">Hangman</h1> 
         <h1 id="edition">Sports Edition</h1>
     </div>
-
-    <div class="jumbotron">
+   
+    <div class ="jumbotron">
         <div class="row">
-            <div class="col-md-6">
-                <img src="assets/images/hangman_0.gif" alt="">
+            <div class="col-md-12">
+                <p id="description-text">Guess a letter to get started <br> No Spaces</p>
             </div>
-        <div class="col-md-6">
-            <p id="description-text">Guess a letter to get started.</p>
+        </div>
+        <div class="row ">
+            <div id="col1" class="col-md-4 align-self-center">
+                <img id="img-pic" width="300px" height="200px;">
+            </div>
+            <div id="col2" class="col-md-4 align-self-center">
+                <h3>Current Word</h3> 
+                
+                <p id="current-word-text"></p>  
+            </div>    
+        <div id="game-counter" class="col-md-4 align-self-center">
+            
             <p>Wins:</p>
             <p id="wins-text">0</p>
             <p>Losses:</p>
@@ -31,12 +41,10 @@
             <p id="guesses-remaining-text">13</p>
             <p>Letters already guessed</p>
             <p id="letters-guessed-text"></p>
-            <h3>Current Word</h3> 
-            <p id="current-word-text"></p>
         </div>
         
         </div>
-        
+       
     </div>
 </body>
 <script type="text/javascript" src="assets/javascript/game.js"></script>

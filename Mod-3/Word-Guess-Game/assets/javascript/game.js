@@ -76,38 +76,19 @@ function checkLetters(letters) {
 function imgPic () {
     let image = document.getElementById('img-pic');
 
-    if (chosenWord === 'football'){
-       image.src = 'assets/images/football.jpg';    
-    } 
-     else if (chosenWord === 'soccer') {
-        image.src = 'assets/images/soccer.png'; 
-    }
-
-    else if (chosenWord === 'golf'){
-        image.src = 'assets/images/golf.png';    
-     } 
-     else if (chosenWord === 'basketball') {
-         image.src = 'assets/images/basketball.png'; 
-     }
-     else if (chosenWord === 'volleyball'){
-        image.src = 'assets/images/volleyball.png';    
-     } 
-     else if (chosenWord === 'baseball') {
-         image.src = 'assets/images/baseball.png'; 
-     }
-     else if (chosenWord === 'tennis') {
-        image.src = 'assets/images/tennis.png'; 
+    if (chosenWord ){
+        image.src = 'assets/images/' + chosenWord + '.png';  
+   
     }
     
 };
-
-
 
 // function to display loser image
 function loserImg () {
     let image = document.getElementById('img-pic');
     image.src = 'assets/images/loser.jpg';
 };
+
 // function for audio win and loss
 function audioWin () {
     let audio = document.getElementById('myAudio');

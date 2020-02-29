@@ -1,8 +1,69 @@
 body {
-    color: black;
+    color: white;
+    background: black;
 }
 .btn img{
     width: 100px;
     height: 100px;
     float: left;
+}
+
+#twoTone {
+    color: aqua; 
+    
+}
+
+.jumbotron {
+    text-align: center;
+    background: black;
+    color: #f0b102;
+    letter-spacing: 20px;
+    font-size: 60px;
+    padding: 0;
+}
+
+#directions {
+    font-size: 35px;
+    letter-spacing: 2px;
+    color: #f0b102; 
+}
+
+.row {
+    text-align: center;
+    padding: 30px;
+}
+
+#user-score,
+#computer-score {
+    font-size: 25px;
+}
+
+#game-icons {
+   
+    padding: 20px;
+}
+
+#game-text,
+#wins-text,
+#loss-text {
+    text-align: center;
+    font-size: 25px;
+    color: #f0b102; 
+}
+
+hr {
+    height: 1px;
+    background-color: aqua;
+    width: 90%;
+}
+
+#counters {
+    border: aqua solid 1px;
+}
+
+#footer {
+    margin-top: 80px;
+    text-align: center;
+    border: #f0b102 solid 2px;
+    width: 100%;
 }

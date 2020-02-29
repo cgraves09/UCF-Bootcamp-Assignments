@@ -8,7 +8,6 @@ let ruby = Math.floor(Math.random() * 11) + 1;
 let diamond = Math.floor(Math.random() * 11) + 1;
 let citrine = Math.floor(Math.random() * 11) + 1;
 let emerald = Math.floor(Math.random() * 11) + 1;
-$('#ruby-img').attr('src', 'assets/images/ruby.jpg');
 
   
 // Generate computer score number between 30 and 50
@@ -19,31 +18,26 @@ $('#computer-score').html(computerScore);
 total = 0;
 $('#user-score').text(total);
 
-
 // 4 buttons that have different random values use on 'click' function
 $('#ruby').click(function(){
-    
     total += ruby;
     $('#user-score').text(total);
     result()
 });
 
 $('#diamond').click(function(){
-    
     total += diamond;
     $('#user-score').text(total);
     result() ;
 });
 
 $('#citrine').click(function(){
-    
     total += citrine;
     $('#user-score').text(total);
     result();
 });
 
 $('#emerald').click(function(){
-     
     total += emerald;
     $('#user-score').text(total);
    result();
@@ -52,36 +46,36 @@ $('#emerald').click(function(){
 });
 
 
-
 // if statement user score === computer score win ... vis versa
 function result() {
     if ( total === computerScore) {
         wins++;
         $('#game-text').text('You Win!');
-        $('#wins-text').text(wins);
+        $('#wins-text').text('Wins: ' + wins);
         
         secondReset();
     } else if ( total > computerScore) {
         loss++;
         $('#game-text').text('You Lose!');
-        $('#loss-text').text(loss);
+        $('#loss-text').text('Loss: ' + loss);
         
         secondReset();
     }
 };
-
+//  Figuring out a reset for the game to add new values attached to crystals
 function secondReset() {
      total = 0;
     $('#user-score').html(total);
-    console.log(total);
-    let computerScore = (Math.floor(Math.random() * 11) + 1);
+    computerScore = Math.floor(Math.random()* 102) + 19 ;
     $('#computer-score').html(computerScore);
-    let ruby = Math.floor(Math.random() * 11) + 1;
-    let citrine = Math.floor(Math.random() * 11) + 1;
-    let emerald = Math.floor(Math.random() * 11) + 1;
-    let diamond = Math.floor(Math.random() * 11) + 1;
-    console.log(ruby);
+    ruby = Math.floor(Math.random() * 11) + 1;
+    diamond = Math.floor(Math.random() * 11) + 1;
+    citrine = Math.floor(Math.random() * 11) + 1;
+    emerald = Math.floor(Math.random() * 11) + 1;
+    console.log(total);
+
 
 };
+
 
 });

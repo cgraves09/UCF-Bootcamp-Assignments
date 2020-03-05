@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Risky Quizness</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Cinzel:900&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <audio id="myAudioStart">
+            <source src="assets/audio/intro.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="myAudioLoss">
+            <source src="assets/Audio/wrong.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="myAudioCorrect">
+            <source src="assets/Audio/correct.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                   <!-- Create Div for title of game --> 
+                   <h1 id="title">Risky Quizness</h1>
+                </div>
+            </div>
+          
+            
+             <div id="hero" class="jumbotron">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="start-button">Start Game</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Div for time left -->  
+                        <div id="time-left"></div>
+                    </div>
+                </div>
+           
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Div for question  -->  
+                        <div id="question"></div>
+                    </div>
+                </div>
+                <!-- Div for answers -->
+                <div class="choices" id="a" onclick="checkAnswer('a')"></div>
+                <div class="choices" id="b"onclick="checkAnswer('b')"></div>
+                <div class="choices" id="c"onclick="checkAnswer('c')"></div>
+                <div class="choices" id="d"onclick="checkAnswer('d')"></div>
+            </div>
+        </div>
+        
+            <div id="footer" class="row fixed-bottom">
+                <div class="col-md-12">
+                 <h3>&copy Christopher Graves 2020</h3>
+                </div>
+            </div>
+        
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
+    </body>
+</html>

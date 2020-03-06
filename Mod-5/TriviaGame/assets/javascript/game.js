@@ -49,7 +49,8 @@ let score;
 let correct = 0;
 let incorrect = 0;
 let isQuestionsLoaded = false;
-let choicesHidden = $('#a,#b,#c,#d')
+let choicesHidden = $('#a,#b,#c,#d');
+let counterText = $('#counter');
 
 // clear out any html on the page
 clear();
@@ -63,6 +64,7 @@ let startButton = $('#start-button').click(function () {
     runningQuestion = 0;
     audioIntro()
     clear();
+    counterText.hide();
     renderQuestion();
 });
 

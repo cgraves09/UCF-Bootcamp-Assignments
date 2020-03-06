@@ -32,8 +32,15 @@ body {
     background: #1e48a9;
     border: #fff 15px dotted;
     
-    
 }
+
+#answer-check,
+#counter {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
 #question {
     text-align: center;
     color: #efaf38;
@@ -46,7 +53,6 @@ body {
     border: #efaf38 1px solid;
     padding: 15px;
     margin-top: 15px;
-    z-index: 2;
 }
 
 #footer {
@@ -59,3 +65,5 @@ body {
     padding: 20px;
     
 }
+
+

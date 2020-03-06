@@ -49,10 +49,11 @@ let score;
 let correct = 0;
 let incorrect = 0;
 let isQuestionsLoaded = false;
+let choicesHidden = $('#a,#b,#c,#d')
 // clear out any html on the page
 clear();
-$('.jumbotron').hide();
-setTimeout(intro,3000);
+$('#title').hide();
+setTimeout(function (){$('#title').slideDown(4000)}, 3000);
 // start the game with click
 let startButton = $('#start-button').click(function () {
     correct = 0;
@@ -60,12 +61,14 @@ let startButton = $('#start-button').click(function () {
     runningQuestion = 0;
     audioIntro()
     clear();
+    setTimeout(function() {$('.jumbotron').slideDown(4000)},3000);
     renderQuestion();
 });
 
 // function to pull object questions
 function renderQuestion () {
     startButton.hide();
+    
     isQuestionsLoaded = false;
     let q = questions[runningQuestion];
     setTimeout(function() {$('#question').text(q.question).show()},1000);
@@ -95,17 +98,16 @@ function renderQuestion () {
 // function to check users selection
 function checkAnswer(answer) {
     if (!isQuestionsLoaded) {
-        return false;
+        return false
     }
     if(questions[runningQuestion].correctAnswer === answer) {
         audioCorrect();
         correct++;
         $('#time-left').text('');
-        $('#question').html("<h1> Get ready for the next question </h1>");
-        $('#a').html("<h1> Congrats you got it right!</h1>");
-        $('#b').html('<img class= "img-thumbnail" src=' + questions[runningQuestion].image +  '>');
-        $('#c').hide();
-        $('#d').hide();
+        $('#question').html('');
+        $('#answer-check').show().html("<h1> Correct!</h1>");
+        $('#answer-check').show().append('<img class= "img-thumbnail" src=' + questions[runningQuestion].image +  '>');
+        choicesHidden.hide();
         clearInterval(timer)
         setTimeout(clear,4000);
         setTimeout(nextQuestion,5000); 
@@ -115,10 +117,9 @@ function checkAnswer(answer) {
         incorrect++;
         $('#time-left').text('');
         $('#question').html("<h1> Correct Answer was : " + questions[runningQuestion].correctAnswer.toUpperCase() + "</h1>");
-        $('#a').html("<h1> WRONG! </h1>");
-        $('#b').html('<img class= "img-thumbnail" src= "assets/images/wrong.gif" width="460" height="345">');
-        $('#c').hide();
-        $('#d').hide();
+        $('#answer-check').show().html("<h1> WRONG! </h1>");
+        $('#answer-check').show().append('<img class= "img-thumbnail" src= "assets/images/wrong.gif" alt = >');
+        choicesHidden.hide();
         clearInterval(timer);
         setTimeout(clear,4000);
         setTimeout(nextQuestion,5000);
@@ -133,11 +134,11 @@ function nextQuestion () {
     } else {
         $('#start-button').text('Try Again').show();
         $('#time-left').text('');
-        $('#question').html("<h1> Not too Shabby </h1>").show();
-        $('#a').html("<h1> Answers Right: " + correct +  "</h1>").show();
-        $('#b').html("<h1> Answers Wrong: " + incorrect +  "</h1>").show();
-        $('#c').html('<img class= "img-thumbnail" src= "assets/images/celebration.gif" width="460" height="345">').show();
-        $('#d').hide();
+        $('#question').html("<h1> Not to Shabby </h1>").show().toUpperCase();
+        $('#counter').html("<h1> Answers Right: " + correct +  "</h1>").show();
+        $('#counter').append("<h1> Answers Wrong: " + incorrect +  "</h1>").show();
+        $('#counter').append('<img class= "img-thumbnail" src= "assets/images/celebration.gif" >');
+        choicesHidden.hide();
         clearInterval(timer)
     }
 }
@@ -145,21 +146,19 @@ function nextQuestion () {
 function clear () {
     $('#time-left').hide(); 
     $('#question').hide(); 
-    $('#a').hide(); 
-    $('#b').hide(); 
-    $('#c').hide();
-    $('#d').hide(); 
+    $('#answer-check').hide();
+    choicesHidden.hide();
 }
 
 // Function to display html when counter has reached 0
 function timeUp () {
+        
         incorrect++;
         $('#time-left').text('');
         $('#question').html("<h1> Times Up</h1>");
-        $('#a').html("<h1> Correct Answer was : " + questions[runningQuestion].correctAnswer.toUpperCase() + "</h1>");
-        $('#b').html('<img class= "img-thumbnail" src="assets/images/times-up.gif" width="460" height="345">');
-        $('#c').hide();
-        $('#d').hide();
+        $('#answer-check').show().html("<h1> Correct Answer was : " + questions[runningQuestion].correctAnswer.toUpperCase() + "</h1>");
+        $('#answer-check').show().append('<img class= "img-thumbnail" src="assets/images/times-up.gif">');
+        choicesHidden.hide();
         clearInterval(timer)
         setTimeout(clear,5000);
         setTimeout(nextQuestion,6000); 
@@ -180,8 +179,4 @@ function audioWrong () {
 }
 
 
-function intro () {
-    
-    $('.jumbotron').slideDown(4000);
-}
 

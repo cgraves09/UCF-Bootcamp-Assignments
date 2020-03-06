@@ -9,12 +9,13 @@ body {
     
 }
 #title {
-    font-size: 50px;
+    font-size: 100px;
     margin-top: 40px;
     font-family: 'Cinzel', serif;   
     text-align: center;
     color: #efaf38;
     background: #2371c7;
+    
 }
 #time-left {
     text-align: center;
@@ -66,5 +67,6 @@ body {
     padding: 20px;
     
 }
+
 
 

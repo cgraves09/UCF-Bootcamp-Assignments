@@ -85,13 +85,12 @@ let correct = 0;
 let incorrect = 0;
 let isQuestionsLoaded = false;
 let choicesHidden = $('#a,#b,#c,#d');
-let counterText = $('#counter');
 let rounds;
 // clear out any html on the page
 clear();
 // hide title for animation on start
 $('#title').hide();
-setTimeout(function (){$('#title').slideDown(4000)}, 3000);
+setTimeout(function (){$('#title').slideDown(4000)}, 2000);
 // start the game with click
 let startButton = $('#start-button').click(function () {
     correct = 0;
@@ -99,7 +98,6 @@ let startButton = $('#start-button').click(function () {
     runningQuestion = 0;
     audioIntro()
     clear();
-    counterText.hide();
     renderQuestion(questions);
 });
 
@@ -226,7 +224,9 @@ function clear () {
     $('#time-left').hide(); 
     $('#question').hide(); 
     $('#answer-check').hide();
+    $('#counter').hide();
     choicesHidden.hide();
+    
 };
 
 // Function to display html when counter has reached 0
@@ -261,6 +261,5 @@ let nextRoundButton = $('#next-round-button').click(function () {
     runningQuestion = 0;
     audioIntro()
     clear();
-    counterText.hide();
     renderQuestion(questionsTwo);
 });

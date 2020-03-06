@@ -50,8 +50,10 @@ let correct = 0;
 let incorrect = 0;
 let isQuestionsLoaded = false;
 let choicesHidden = $('#a,#b,#c,#d')
+
 // clear out any html on the page
 clear();
+// hide title for animation on start
 $('#title').hide();
 setTimeout(function (){$('#title').slideDown(4000)}, 3000);
 // start the game with click
@@ -61,16 +63,15 @@ let startButton = $('#start-button').click(function () {
     runningQuestion = 0;
     audioIntro()
     clear();
-    setTimeout(function() {$('.jumbotron').slideDown(4000)},3000);
     renderQuestion();
 });
 
 // function to pull object questions
 function renderQuestion () {
     startButton.hide();
-    
     isQuestionsLoaded = false;
     let q = questions[runningQuestion];
+    // timeout functions to load questions one by one
     setTimeout(function() {$('#question').text(q.question).show()},1000);
     setTimeout(function() {$('#a').html("<h3> A: " + q.a + "</h3").show()},1000);
     setTimeout(function() {$('#b').html("<h3> B: " + q.b + "</h3").show()},2000);
@@ -78,8 +79,9 @@ function renderQuestion () {
     setTimeout(function() {$('#d').html("<h3> D: " + q.d + "</h3").show()},4000);
     setTimeout(function (){isQuestionsLoaded = true;},5000);
     setTimeout(function (){$('#time-left').show()},5000);
+
     counter = 15;
-    
+    // Interval set for question timer
     timer = setInterval(function(){
         counter--;
         $('#time-left').html("<h3> Time Remaining: " + counter + "</h3>");
@@ -88,15 +90,12 @@ function renderQuestion () {
             clearInterval(timer)
             timeUp();
         }
-    }, 1000);
-   
-    
-    
-    
+    }, 1000); 
 };
 
 // function to check users selection
 function checkAnswer(answer) {
+    // Check if questions have loaded
     if (!isQuestionsLoaded) {
         return false
     }
@@ -128,27 +127,28 @@ function checkAnswer(answer) {
 };
 // function to go to the next question in array
 function nextQuestion () {
+    // Check if there are questions left
     if (runningQuestion < lastQuestionIndex) {
         runningQuestion++;
         renderQuestion();
     } else {
         $('#start-button').text('Try Again').show();
         $('#time-left').text('');
-        $('#question').html("<h1> Not to Shabby </h1>").show().toUpperCase();
-        $('#counter').html("<h1> Answers Right: " + correct +  "</h1>").show();
-        $('#counter').append("<h1> Answers Wrong: " + incorrect +  "</h1>").show();
-        $('#counter').append('<img class= "img-thumbnail" src= "assets/images/celebration.gif" >');
+        $('#question').show().html("<h1> Not to Shabby </h1>");
+        $('#counter').show().html("<h1> Answers Right: " + correct +  "</h1>");
+        $('#counter').show().append("<h1> Answers Wrong: " + incorrect +  "</h1>");
+        $('#counter').show().append('<img class= "img-thumbnail" src= "assets/images/celebration.gif" >');
         choicesHidden.hide();
         clearInterval(timer)
     }
-}
-// clear function to clear any html
+};
+// clear function to clear html inbetween dynamic changes
 function clear () {
     $('#time-left').hide(); 
     $('#question').hide(); 
     $('#answer-check').hide();
     choicesHidden.hide();
-}
+};
 
 // Function to display html when counter has reached 0
 function timeUp () {
@@ -162,21 +162,18 @@ function timeUp () {
         clearInterval(timer)
         setTimeout(clear,5000);
         setTimeout(nextQuestion,6000); 
-}
+};
 
 // audio functions
 function audioIntro () {
     let audio = document.getElementById('myAudioStart');
     audio.play();
-}
+};
 function audioCorrect () {
     let audio = document.getElementById('myAudioCorrect');
     audio.play();
-}
+};
 function audioWrong () {
     let audio = document.getElementById('myAudioLoss');
     audio.play();
-}
-
-
-
+};

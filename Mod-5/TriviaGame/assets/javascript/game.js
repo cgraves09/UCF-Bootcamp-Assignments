@@ -100,7 +100,7 @@ function checkAnswer(answer) {
         $('#time-left').text('');
         $('#question').html("<h1> Get ready for the next question </h1>");
         $('#a').html("<h1> Congrats you got it right!</h1>");
-        $('#b').html('<img src="' + questions[runningQuestion].image + '" width="460" height="345">');
+        $('#b').html('<img class= "img-thumbnail" src=' + questions[runningQuestion].image +  '>');
         $('#c').hide();
         $('#d').hide();
         clearInterval(timer)
@@ -111,9 +111,9 @@ function checkAnswer(answer) {
         audioWrong();
         incorrect++;
         $('#time-left').text('');
-        $('#question').html("<h1> Correct Answer was : " + questions[runningQuestion].correctAnswer + "</h1>");
+        $('#question').html("<h1> Correct Answer was : " + questions[runningQuestion].correctAnswer.toUpperCase() + "</h1>");
         $('#a').html("<h1> WRONG! </h1>");
-        $('#b').html('<img src= "assets/images/wrong.gif" width="460" height="345">');
+        $('#b').html('<img class= "img-thumbnail" src= "assets/images/wrong.gif" width="460" height="345">');
         $('#c').hide();
         $('#d').hide();
         clearInterval(timer);
@@ -133,7 +133,7 @@ function nextQuestion () {
         $('#question').html("<h1> Not too Shabby </h1>").show();
         $('#a').html("<h1> Answers Right: " + correct +  "</h1>").show();
         $('#b').html("<h1> Answers Wrong: " + incorrect +  "</h1>").show();
-        $('#c').html('<img src= "assets/images/celebration.gif" width="460" height="345">').show();
+        $('#c').html('<img class= "img-thumbnail" src= "assets/images/celebration.gif" width="460" height="345">').show();
         $('#d').hide();
         clearInterval(timer)
     }
@@ -152,8 +152,8 @@ function timeUp () {
         incorrect++;
         $('#time-left').text('');
         $('#question').html("<h1> Times Up</h1>");
-        $('#a').html("<h1> Correct Answer was : " + questions[runningQuestion].correctAnswer + "</h1>");
-        $('#b').html('<img src="assets/images/times-up.gif" width="460" height="345">');
+        $('#a').html("<h1> Correct Answer was : " + questions[runningQuestion].correctAnswer.toUpperCase() + "</h1>");
+        $('#b').html('<img class= "img-thumbnail" src="assets/images/times-up.gif" width="460" height="345">');
         $('#c').hide();
         $('#d').hide();
         clearInterval(timer)

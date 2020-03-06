@@ -1,7 +1,11 @@
 body {
     background: #2371c7;
-    border: #efaf38 5px solid;
+    
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.container {
+    margin-bottom: -50px;
+    border: #efaf38 5px solid;
 }
 #title {
     font-size: 50px;
@@ -26,6 +30,7 @@ body {
 #hero {
     background: #1e48a9;
     border: #efaf38 1px solid;
+    
 }
 #question {
     text-align: center;
@@ -42,6 +47,7 @@ body {
 }
 
 #footer {
+    margin-top: 40px;
     background: #efaf38;
     color: #fff;
     margin: 0;

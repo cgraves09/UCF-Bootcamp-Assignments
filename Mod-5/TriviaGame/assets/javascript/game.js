@@ -1,3 +1,4 @@
+
 // Create array of objects questions and answers
 let questions =[
 { 
@@ -50,6 +51,8 @@ let incorrect = 0;
 let isQuestionsLoaded = false;
 // clear out any html on the page
 clear();
+$('.jumbotron').hide();
+setTimeout(intro,3000);
 // start the game with click
 let startButton = $('#start-button').click(function () {
     correct = 0;
@@ -147,6 +150,7 @@ function clear () {
     $('#c').hide();
     $('#d').hide(); 
 }
+
 // Function to display html when counter has reached 0
 function timeUp () {
         incorrect++;
@@ -176,5 +180,8 @@ function audioWrong () {
 }
 
 
-
+function intro () {
+    
+    $('.jumbotron').slideDown(4000);
+}
 

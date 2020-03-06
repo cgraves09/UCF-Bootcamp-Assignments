@@ -1,7 +1,7 @@
 
 // Create array of objects questions and answers
-let questions =[
-{ 
+let questions = [
+ { 
     question: 'When Michael Jordan played for the Chicago Bulls, how many NBA Championships did he win?',
         a: '7',
         b: '4',
@@ -40,18 +40,53 @@ let questions =[
         correctAnswer: 'b',
         image: "assets/images/germany.jpg"
     }];
+let questionsTwo = [
+{
+    question: 'What country won the very first FIFA World Cup in 1930?',
+    a: 'Italy',
+    b: 'Uraguay',
+    c: 'Germany',
+    d: 'Brazil',
+correctAnswer: 'b',
+image: "assets/images/uraguay.jpg"
+},
+{
+question: 'Which company owns Bugatti, Lamborghini. Audi, Porsche and Ducati?',
+a: 'Mercedes',
+b: 'Bremen LLC',
+c: 'Volkswagen',
+d: 'BMW',
+correctAnswer: 'c',
+image: "assets/images/volkswagen.png"
+},
+{
+question: 'How many times does the heart beat per day?',
+a: '10,00',
+b: '75,000',
+c: '78,500',
+d: 'More than 100,000',
+correctAnswer: 'd',
+image: "assets/images/heart.gif"
+},
+{
+question: 'How many Grammys does John Legend have?',
+a: '5',
+b: '7',
+c: '0',
+d: '10',
+correctAnswer: 'd',
+image: "assets/images/legend.jpg"
+}];
 // global variables
-let lastQuestionIndex = questions.length -1;
 let runningQuestion = 0;
 let counter;
 let timer;
-let score;
 let correct = 0;
 let incorrect = 0;
 let isQuestionsLoaded = false;
 let choicesHidden = $('#a,#b,#c,#d');
 let counterText = $('#counter');
-
+let rounds;
 // clear out any html on the page
 clear();
 // hide title for animation on start
@@ -65,14 +100,17 @@ let startButton = $('#start-button').click(function () {
     audioIntro()
     clear();
     counterText.hide();
-    renderQuestion();
+    renderQuestion(questions);
 });
 
 // function to pull object questions
-function renderQuestion () {
+function renderQuestion (question) {
     startButton.hide();
+    rounds = question;
+    console.log(question);
     isQuestionsLoaded = false;
-    let q = questions[runningQuestion];
+    console.log(runningQuestion);
+    let q = question[runningQuestion];
     // timeout functions to load questions one by one
     setTimeout(function() {$('#question').text(q.question).show()},1000);
     setTimeout(function() {$('#a').html("<h3> A: " + q.a + "</h3").show()},1000);
@@ -81,7 +119,7 @@ function renderQuestion () {
     setTimeout(function() {$('#d').html("<h3> D: " + q.d + "</h3").show()},4000);
     setTimeout(function (){isQuestionsLoaded = true;},5000);
     setTimeout(function (){$('#time-left').show()},5000);
-
+    
     counter = 15;
     // Interval set for question timer
     timer = setInterval(function(){
@@ -93,6 +131,7 @@ function renderQuestion () {
             timeUp();
         }
     }, 1000); 
+
 };
 
 // function to check users selection
@@ -101,23 +140,23 @@ function checkAnswer(answer) {
     if (!isQuestionsLoaded) {
         return false
     }
-    if(questions[runningQuestion].correctAnswer === answer) {
+    if(rounds[runningQuestion].correctAnswer === answer) {
         audioCorrect();
         correct++;
         $('#time-left').text('');
         $('#question').html('');
         $('#answer-check').show().html("<h1> Correct!</h1>");
-        $('#answer-check').show().append('<img class= "img-thumbnail" src=' + questions[runningQuestion].image +  '>');
+        $('#answer-check').show().append('<img class= "img-thumbnail" src=' + rounds[runningQuestion].image +  '>');
         choicesHidden.hide();
         clearInterval(timer)
         setTimeout(clear,4000);
         setTimeout(nextQuestion,5000); 
         
-    }else if ((questions[runningQuestion].correctAnswer != answer)){
+    }else if ((rounds[runningQuestion].correctAnswer != answer)){
         audioWrong();
         incorrect++;
         $('#time-left').text('');
-        $('#question').html("<h1> Correct Answer was : " + questions[runningQuestion].correctAnswer.toUpperCase() + "</h1>");
+        $('#question').html("<h1> Correct Answer was : " + rounds[runningQuestion].correctAnswer.toUpperCase() + "</h1>");
         $('#answer-check').show().html("<h1> WRONG! </h1>");
         $('#answer-check').show().append('<img class= "img-thumbnail" src= "assets/images/wrong.gif" alt = >');
         choicesHidden.hide();
@@ -129,23 +168,36 @@ function checkAnswer(answer) {
 };
 // function to go to the next question in array
 function nextQuestion () {
+    let score = correct + incorrect;
+    console.log(score);
+    let lastQuestionIndex = rounds.length -1;
     // Check if there are questions left
     if (runningQuestion < lastQuestionIndex) {
         runningQuestion++;
-        renderQuestion();
+        renderQuestion(rounds);
     } else {
-        $('#start-button').text('Try Again').show();
+        if( score === 4){
+        $('#next-round-button').text('Next Round').show();
         $('#time-left').text('');
-        $('#question').show().html("<h1> Not to Shabby </h1>");
+        $('#question').show().html("<h1> Halfway There </h1>");
         $('#counter').show().html("<h1> Answers Right: " + correct +  "</h1>");
         $('#counter').show().append("<h1> Answers Wrong: " + incorrect +  "</h1>");
         $('#counter').show().append('<img class= "img-thumbnail" src= "assets/images/celebration.gif" >');
         choicesHidden.hide();
         clearInterval(timer)
+        } else {
+            $('#start-button').text('Try Again').show();    
+            $('#counter').show().html("<h1> Answers Right: " + correct +  "</h1>");
+            $('#counter').show().append("<h1> Answers Wrong: " + incorrect +  "</h1>");
+            $('#counter').show().append('<img class= "img-thumbnail" src= "assets/images/celebration.gif" >');
+        choicesHidden.hide();
+        clearInterval(timer)
+        }
     }
 };
 // clear function to clear html inbetween dynamic changes
 function clear () {
+    $('#next-round-button').hide();
     $('#time-left').hide(); 
     $('#question').hide(); 
     $('#answer-check').hide();
@@ -179,3 +231,11 @@ function audioWrong () {
     let audio = document.getElementById('myAudioLoss');
     audio.play();
 };
+
+let nextRoundButton = $('#next-round-button').click(function () {
+    runningQuestion = 0;
+    audioIntro()
+    clear();
+    counterText.hide();
+    renderQuestion(questionsTwo);
+});

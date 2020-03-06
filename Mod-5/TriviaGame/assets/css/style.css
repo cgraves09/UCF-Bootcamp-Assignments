@@ -21,7 +21,8 @@ body {
     font-size: 20px;
     color: #fff;
 }
-#start-button {
+#start-button,
+#next-round-button {
     color: #fff;
     text-align: center;
     background: #efaf38;

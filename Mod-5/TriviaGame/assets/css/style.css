@@ -35,12 +35,17 @@ body {
     border: #fff 15px dotted;
     
 }
-
-#answer-check,
 #counter {
     text-align: center;
-    color: #fff;
+    color: #efaf38;
     font-size: 20px;
+}
+
+#answer-check
+ {
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
 }
 
 #question {

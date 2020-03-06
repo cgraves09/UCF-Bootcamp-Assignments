@@ -235,7 +235,7 @@ function timeUp () {
         incorrect++;
         $('#time-left').text('');
         $('#question').html("<h1> Times Up</h1>");
-        $('#answer-check').show().html("<h1> Correct Answer was : " + questions[runningQuestion].correctAnswer.toUpperCase() + "</h1>");
+        $('#answer-check').show().html("<h1> Correct Answer was : " + rounds[runningQuestion].correctAnswer.toUpperCase() + "</h1>");
         $('#answer-check').show().append('<img class= "img-thumbnail" src="assets/images/times-up.gif">');
         choicesHidden.hide();
         clearInterval(timer)

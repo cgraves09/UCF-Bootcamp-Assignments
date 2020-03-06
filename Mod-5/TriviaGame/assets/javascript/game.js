@@ -106,6 +106,7 @@ let startButton = $('#start-button').click(function () {
 // function to pull object questions
 function renderQuestion (question) {
     startButton.hide();
+    // argument will be saved in rounds variable
     rounds = question;
     console.log(question);
     isQuestionsLoaded = false;
@@ -177,19 +178,43 @@ function nextQuestion () {
         renderQuestion(rounds);
     } else {
         if( score === 4){
-        $('#next-round-button').text('Next Round').show();
-        $('#time-left').text('');
-        $('#question').show().html("<h1> Halfway There </h1>");
-        $('#counter').show().html("<h1> Answers Right: " + correct +  "</h1>");
-        $('#counter').show().append("<h1> Answers Wrong: " + incorrect +  "</h1>");
-        $('#counter').show().append('<img class= "img-thumbnail" src= "assets/images/celebration.gif" >');
+            $('#question').show().html("<h1> Score Update </h1>");        
+            $('#counter').show().html("<h1> Answers Right: " + correct +  "</h1>");
+            $('#counter').show().append("<h1> Answers Wrong: " + incorrect +  "</h1>");
+            $('#next-round-button').text('Next Round').show();
+            $('#time-left').text('');
+            if (correct > incorrect){
+                $('#answer-check').show().html("<h1> What a Smarty Pants! </h1>");
+                $('#counter').show().append('<img class= "img-thumbnail" src= "assets/images/smarty.gif" >');
+            }
+            else if (correct === incorrect){
+            $('#answer-check').show().html("<h1> You can do better! </h1>");
+            $('#counter').show().append('<img class= "img-thumbnail" src= "assets/images/do-better.gif" >');
+            }
+            else {
+            $('#answer-check').show().html("<h1> Jeeze read a book! </h1>");
+            $('#counter').show().append('<img class= "img-thumbnail" src= "assets/images/read.gif" >');
+            };
+
         choicesHidden.hide();
         clearInterval(timer)
         } else {
             $('#start-button').text('Try Again').show();    
             $('#counter').show().html("<h1> Answers Right: " + correct +  "</h1>");
             $('#counter').show().append("<h1> Answers Wrong: " + incorrect +  "</h1>");
-            $('#counter').show().append('<img class= "img-thumbnail" src= "assets/images/celebration.gif" >');
+            if (correct > incorrect){
+                $('#answer-check').show().html("<h1> What a Smarty Pants! </h1>");
+                $('#counter').show().append('<img class= "img-thumbnail" src= "assets/images/not-mad.gif" >');
+            }
+            else if (correct === incorrect){
+            $('#answer-check').show().html("<h1> Well I guess your'e half an idiot! </h1>");
+            $('#counter').show().append('<img class= "img-thumbnail" src= "assets/images/shake-head.gif" >');
+            }
+            else {
+            $('#answer-check').show().html("<h1> Thats just embarrassing! </h1>");
+            $('#counter').show().append('<img class= "img-thumbnail" src= "assets/images/half-idiot.gif" >');
+            };
+            
         choicesHidden.hide();
         clearInterval(timer)
         }
@@ -231,7 +256,7 @@ function audioWrong () {
     let audio = document.getElementById('myAudioLoss');
     audio.play();
 };
-
+// Function for second round of questions
 let nextRoundButton = $('#next-round-button').click(function () {
     runningQuestion = 0;
     audioIntro()

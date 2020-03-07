@@ -61,7 +61,7 @@ image: "assets/images/volkswagen.png"
 },
 {
 question: 'How many times does the heart beat per day?',
-a: '10,00',
+a: '10,000',
 b: '75,000',
 c: '78,500',
 d: 'More than 100,000',

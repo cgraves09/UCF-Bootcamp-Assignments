@@ -1,0 +1,58 @@
+body {
+    background: black;
+}
+.container {
+    text-align: center;
+}
+#title {
+    font-family: 'Bungee Outline', cursive;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 6px;
+    font-size: 60px;
+    
+}
+#topics {
+    text-align: center;  
+}
+#search-row{
+    text-align: center;
+}
+#search-col{
+    padding: 0;
+}
+#add-gif{
+    text-align: center;
+    color: #ffffff;
+    border: red 3px solid;
+    background: #dc3444;
+    width: 95px;
+    line-height: 65px;
+    
+}
+#search-bar {
+    color: #ffffff;
+    text-align: center;
+    padding-right: 0;
+}
+#gif-input {
+    border: #dc3444 3px solid;
+    height: 80px;
+}
+#gif-area {
+    text-align: center;
+}
+#rating-text {
+    color: #ffffff;
+}
+
+.gif-img {
+    padding: 15px;
+    text-align: center;
+    
+}
+img {
+    padding: 15px;
+    text-align: center;
+    width: 300px;
+}

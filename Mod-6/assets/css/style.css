@@ -1,11 +1,20 @@
 body {
-    background: black;
+    background: #000000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 5px;
+}
+h1 {
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+}
+#break-line {
+    border: #dc3444 2px solid;
 }
 .container {
     text-align: center;
 }
 #title {
-    font-family: 'Bungee Outline', cursive;
+    font-family: 'Montserrat', cursive;
     text-align: center;
     color: #ffffff;
     letter-spacing: 6px;
@@ -41,6 +50,17 @@ body {
 }
 #gif-area {
     text-align: center;
+}
+#welcome-text {
+    color: #ffffff;
+}
+.more-gifs{
+    padding: 30px;
+    margin: 10px;
+}
+.gif-description {
+    color: #ffffff;
+    padding: 25px;
 }
 #gif-col{
     border: #ffffff 2px solid;

@@ -31,13 +31,20 @@ function displayGifs () {
         method: 'GET'
         
     }).then (function (response) {
+        // empty to prevent duplicates
         $('.more-gifs').empty();
+        $('.gif-description').empty();
          // create a button that says load 10 more gifs
          let moreGif = $('<button>');
          moreGif.addClass('btn btn-danger btn-lg');
          moreGif.addClass('more-gifs');
-         moreGif.text('GIVE ME MORE ' + topic.toUpperCase() + ' !!!!!')
+         moreGif.text('GIVE ME MORE ' + topic.toUpperCase() + ' GIFS!!!!!')
          $('#gif-area').append(moreGif)
+        //  description for gifs
+         let description =$('<h4>');
+         description.addClass('gif-description');
+         description.text('Click on a Gif to animate, press again to stop the animation')
+         $('#gif-area').append(description);
         
         // Variable for new div using bootstrap rows
         let gifDivRow = $('<div class = "row" >')
@@ -57,9 +64,8 @@ function displayGifs () {
 
             // conditionals to push data to columns
             if (j < 3) {
-                
-                 $(gifDivCol).append('<h4 id= "rating-text"> Rating: ' + response.data[j].rating + '</h4>');
-                 $(gifDivCol).append('<h3 id= "gif-title">' + response.data[j].title + '</h3>');
+                $(gifDivCol).append('<h3 id= "gif-title">' + response.data[j].title + '</h3>');
+                $(gifDivCol).append('<h4 id= "rating-text"> Rating: ' + response.data[j].rating + '</h4>');
                  $(gifDivCol).append(gifImgs)
                  $(gifDivRow).prepend(gifDivCol)
             }else  {

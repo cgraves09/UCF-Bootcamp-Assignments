@@ -1,21 +1,20 @@
 // Create a variable to hold array of topics
 let topics = ['trending', 'sports', 'funny', 'movies', 'rachet', 'coronavirus']
 let isPlaying = false;
+let storageArrays = [];
 // Take the array and push and append to new buttons using a for loop
 function renderButtons () {
-    $('#topics').empty();
     
+$('#topics').empty();
    for (let i = 0; i < topics.length; i++ ) {
         let t = $('<button>');
         t.addClass('gif');
         t.addClass('btn btn-danger btn-lg')
         t.attr('data-name',topics[i]);
-        t.text(topics[i].toUpperCase());
+        t.text(topics[i]);
         $('#topics').append(t)
-        
-
-    } 
-}
+    };
+};
 
 
 // using ajax function link topic array strings to names in api search
@@ -139,25 +138,51 @@ function gifAnimate () {
 // create an onclick function for the submit button to push the val().trim to the array
     $('#add-gif').click(function (event){
         event.preventDefault();
+        
         let textVal = $('#gif-input');
         let newGif = $('#gif-input').val().trim();
         if (textVal.val() === ''){
             return false;
         }else {
+            storageArrays.push(newGif);
             topics.push(newGif);
             renderButtons();
             $('#gif-input').val('');
+            console.log(storageArrays);
         }
-        
-        
-        
-        
+        localStorage.setItem('topics', JSON.stringify(storageArrays));
     })
+
+    let localArray = JSON.parse(localStorage.getItem('topics'));
+    console.log(localArray);
+    // when page loads add storage array to buttons
+ function local (){
+     if (localArray === null){
+         return false
+     }else {
+         for (let i = 0; i < localArray.length; i++){
+         topics.push(localArray[i]);
+         renderButtons();
+     }
+     }
+     
+
+
+ }
+  
 // click functions for gifs
 $(document).on('click', '.gif',displayGifs)
 $(document).on('click', '.gif-img',gifAnimate)
-
+local();
 renderButtons();
+
+
+$('#clear').click(function(){
+    localStorage.clear()
+    topics = ['trending', 'sports', 'funny', 'movies', 'rachet', 'coronavirus']
+    localArray = [];
+    renderButtons();
+})
 
  
         

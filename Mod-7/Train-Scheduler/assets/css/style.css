@@ -1,0 +1,80 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+hr {
+    border: #2661a8 solid 1px;
+    margin-top: 5px;
+    color: #2661a8;
+    width: 100%;
+}
+
+#heading-title {
+    background: #2661a8;
+    color: #ffffff;
+    text-align: center;
+}
+#title-name{
+    font-size: 80px;
+}
+
+#current-train {
+    text-align: center;
+    border: #2661a8 solid 3px;
+}
+#current-train-title {
+    font-size: 30px;
+    color: #ffffff;
+    background: #2661a8;
+    text-align: left;
+}
+#current-train-header {
+    font-size: 23px;
+}
+#train-form{
+    border: #2661a8 solid 7px;
+}
+#input-title {
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
+    letter-spacing: 5px;
+}
+form {
+    margin: auto;
+    width: 98%;
+}
+#train-input-box {
+    font-size: 20px;
+    background: #2661a8;
+    color: #ffffff;
+}
+#time-select {
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+}
+
+select {
+    margin: auto;
+}
+#frequency {
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+#submit {
+    color: #ffffff;
+    background: red;
+    font-size: 20px;
+    width: 100%;
+}
+#footer {
+    text-align: center;
+    background: #2661a8;
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 15px;
+}

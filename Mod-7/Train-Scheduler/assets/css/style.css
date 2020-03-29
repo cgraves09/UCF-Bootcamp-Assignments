@@ -2,6 +2,9 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
     letter-spacing: 2px;
+    background-image: url('../images/train.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 hr {
     border: #2661a8 solid 1px;
@@ -40,6 +43,9 @@ hr {
     text-align: center;
     margin: auto;
     letter-spacing: 5px;
+    background: #ffffff;
+    width: 100%;
+    padding: 0;
 }
 form {
     margin: auto;
@@ -77,4 +83,10 @@ select {
     color: #ffffff;
     margin-top: 20px;
     padding: 15px;
+}
+#trains-container {
+    background: #ffffff;
+}
+#train-col-12 {
+    padding: 0;
 }

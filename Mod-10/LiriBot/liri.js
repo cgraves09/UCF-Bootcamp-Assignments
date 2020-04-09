@@ -4,6 +4,8 @@ const spotifyNode = require('node-spotify-api');
 const moment = require('moment');
 const keys = require("./keys.js");
 const fs = require("fs");
+var bandApiKey = keys.bandsInTown.apiKey
+var movieApiKey = keys.ombd.apiKey
 
 
 // GLOBAL VARIABLES 
@@ -86,7 +88,7 @@ function thisSong(){
 }
 // Bands In Town Api Function
 function concerts(){
-  axios.get("https://rest.bandsintown.com/artists/" + argString + "/events?app_id=codingbootcamp")
+  axios.get("https://rest.bandsintown.com/artists/" + argString + "/events?app_id=" + bandApiKey)
   .then(function(response){
     var data = response.data
     for (var i = 0; i < data.length; i++){
@@ -99,7 +101,7 @@ function concerts(){
 }
 // OMB Api Function
 function movies(){
-  axios.get("http://www.omdbapi.com/?t=" + argString + "&apikey=trilogy")
+  axios.get("http://www.omdbapi.com/?t=" + argString + "&apikey=" + movieApiKey)
   .then(function(response){
     var data = response.data;
     var title = data.Title;

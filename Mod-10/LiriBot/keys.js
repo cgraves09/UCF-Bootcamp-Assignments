@@ -4,3 +4,11 @@ exports.spotify = {
   id: process.env.SPOTIFY_ID,
   secret: process.env.SPOTIFY_SECRET
 };
+
+exports.bandsInTown = {
+  apiKey: process.env.BANDS_APIKEY
+};
+
+exports.ombd = {
+  apiKey: process.env.MOVIES_APIKEY
+};

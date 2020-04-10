@@ -22,9 +22,9 @@ You will also need to install the following npm packages:
 - Opening up the terminal/command prompt cd into the correct folder of the app.
 - run $ node liri.js followed by one of the following below:
 
-- ### spotify-this- <song song name>
-- ### concert-this <artist name>
-- ### movie-this <movie name>
+- ### spotify-this-song [song name]
+- ### concert-this [artist name]
+- ### movie-this [movie name]
 
 
 ## Screen Shots of working CLI APP

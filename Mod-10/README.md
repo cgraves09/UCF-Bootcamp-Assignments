@@ -15,4 +15,7 @@ You will also need to install the following npm packages:
 - axios
 - moment
 - dotenv
-![](liriBot/screenShots/concert-this.png)
+![alt text](LiriBot/screenShots/spotify-this-song.png)
+![alt text](LiriBot/screenShots/concert-this.png)
+![alt text](LiriBot/screenShots/movie-this.png)
+![alt text](LiriBot/screenShots/do-what-it-says.png)

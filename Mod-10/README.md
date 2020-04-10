@@ -25,6 +25,7 @@ You will also need to install the following npm packages:
 - ### spotify-this-song [song name]
 - ### concert-this [artist name]
 - ### movie-this [movie name]
+- ### do-what-it-says [leave this empty and text from random.txt file will fill the space.]
 
 
 ## Screen Shots of working CLI APP

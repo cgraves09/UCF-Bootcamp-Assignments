@@ -19,7 +19,7 @@ function start(){
         if (err) throw err;
         inquirer.prompt([
             {
-                type: 'rawlist',
+                type: 'list',
                 name: 'items',
                 message: 'What would you like to buy?',
                 choices: function(){

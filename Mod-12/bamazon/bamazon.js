@@ -25,7 +25,7 @@ function start(){
                 choices: function(){
                     let choicesArray = [];
                     for (let i = 0; i < res.length; i++){
-                        choicesArray.push(res[i].item_name)
+                        choicesArray.push(res[i].product)
                     }
                     return choicesArray;
                 }
@@ -39,7 +39,7 @@ function start(){
         ]).then(function(answers){
             let chosenItem;
             for(let i = 0; i < res.length; i++){
-                if (res[i].item_name === answers.items){
+                if (res[i].product === answers.items){
                     chosenItem = res[i];
                 }
             }
@@ -57,7 +57,7 @@ function start(){
                 function(err){
                     if (err) throw err;
                     console.log('\nCongrats your order has completed!');
-                    console.log('\nItem: ' + chosenItem.item_name + '\n Price: ' + "$" + chosenItem.price + '\n');
+                    console.log('\nItem: ' + chosenItem.product + '\n Price: ' + "$" + chosenItem.price + '\n');
                     start();
                 });
             }

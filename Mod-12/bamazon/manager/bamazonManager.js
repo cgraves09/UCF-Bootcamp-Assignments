@@ -5,7 +5,7 @@ let connection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'Paradox231!',
+    password: '2020',
     database: 'bamazonDB'
 });
 

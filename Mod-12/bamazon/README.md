@@ -23,7 +23,7 @@ You will also need to install the following npm packages:
 
 
 ## Screen Shots of working CLI APP
-![alt text](bamazon/screenShots/bamazonCustomer.png)
-![alt text](bamazon/screenShots/bamazonDatabase.png)
-![alt text](bamazon/screenShots/bamazonManager.png)
-![alt text](bamazon/screenShots/bamazonManager1.png)
+![alt text](screenShots/bamazonCustomer.png)
+![alt text](screenShots/bamazonDatabase.png)
+![alt text](screenShots/bamazonManager.png)
+![alt text](screenShots/bamazonManager1.png)

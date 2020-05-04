@@ -12,3 +12,33 @@ body {
 .jumbotron {
     color: black;
 }
+#space {
+    background-color: black;
+}
+
+#surveyContainer {
+    background-color: #ffffff;
+    border-radius: 10%;
+    color: black;
+}
+
+#question {
+    color: blue;
+    padding: 10px;
+}
+
+#inputBox {
+    padding: 10px;
+    background-color: #D3D3D3;
+    border: 1px solid black;
+    text-align: center;
+}
+
+h3 {
+    padding: 5px;
+}
+
+#submit {
+    width: 50%;
+    margin: auto;
+}

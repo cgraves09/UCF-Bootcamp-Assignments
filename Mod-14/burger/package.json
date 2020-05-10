@@ -1,12 +1,12 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "A resturant app to handle burgers eaten using mysql,express,node and handlebars.",
+  "description": "A restaurant app to handle burgers eaten using mysql,express,node and handlebars.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Christopher G",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",

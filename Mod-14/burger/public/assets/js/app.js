@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+    $('.alert').alert().hide()
     $('.eaten').click(function(event){
         let id = $(this).data('id');
         let newDevoured = $(this).data('eaten');
@@ -23,8 +24,8 @@ $( document ).ready(function() {
         event.preventDefault();
         let burgerName = $('#burger').val().trim();
         if (burgerName === ''){
-            alert("Please give the burger a name")
-            return
+            
+            return $('.alert').alert().show()
         }
         let newBurger = {
             burger_name: burgerName,

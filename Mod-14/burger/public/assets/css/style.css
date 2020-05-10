@@ -1,3 +1,45 @@
-h1 {
-    font-size: 100px;
+body {
+    background-image: url('../images/burgerBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #b21324;
+    background-position: inherit;
+}
+#header {
+    color: #fff;
+    padding: 30px;
+}
+.yellowText {
+    color: yellow;
+}
+.container {
+    margin: auto;
+    text-align: center;
+}
+
+#burgers {
+    border: 1px solid yellow;
+    color: #fff;
+}
+
+#devouredBurgers {
+    border: 1px solid #fff;
+    color: yellow;
+}
+
+#addBurger {
+    padding: 20px;
+    color: yellow;
+    font-weight: bold;
+}
+
+#headerLineBreak {
+    border: 1px solid yellow;
+}
+
+.btn {
+    color: #b21324;
+}
+.fa-hamburger {
+    color: yellow;
 }

@@ -21,10 +21,10 @@
         <h2><strong>About You</strong></h2>
         <hr>
         <h4>Name (Required)</h4>
-        <input id="inputBox" type="text" id="name" class="form-control" required>
+        <input id="name" type="text" id="name" class="form-control" required>
     
         <h4>Link to Photo Image (Required)</h4>
-        <input id="inputBox" type="text" id="image" class="form-control" required>
+        <input id="image" type="text" id="image" class="form-control" required>
     
         <hr>
     
@@ -187,7 +187,7 @@
        
         function validInput (){
             let isVal = true;
-            $('.form-control').each(function (){
+            $('#inputBox').each(function (){
                 if ($(this).val() === ''){
                     isVal = false
                 }
